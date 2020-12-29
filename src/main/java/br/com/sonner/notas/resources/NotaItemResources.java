@@ -1,27 +1,27 @@
 package br.com.sonner.notas.resources;
-import br.com.sonner.notas.models.Produtos;
-import br.com.sonner.notas.repository.ProdutoRepository;
+import br.com.sonner.notas.models.NotaItem;
+import br.com.sonner.notas.repository.NotaItemRepository;
 import org.springframework.web.bind.annotation.*;
 
 @RestController // Classe API REST e vai receber a requisições http.
 @RequestMapping(value = "/cadastro") // URI Padrão para a API
-public class ProdutoResources {
+public class NotaItemResources {
     final // para utilizar os métodos para se conectar com o Banco de Dados.
-    ProdutoRepository produtoRepository;
+    NotaItemRepository notaItemRepository;
 
-    public ProdutoResources(ProdutoRepository produtoRepository) {
-        this.produtoRepository = produtoRepository;
+    public NotaItemResources(NotaItemRepository notaItemRepository) {
+        this.notaItemRepository = notaItemRepository;
     }
 
     @GetMapping("/produtos") // Método que lista todos os produtos salvos no Banco de Dados
     public Object listaProdutos() {
-        return produtoRepository.findAll();// Retorno
+        return notaItemRepository.findAll();// Retorno
         //http://localhost:8080/cadastro/notas  link da pagina Web.
     }
 
     @GetMapping("/produto/{id}") // Lista um único produto pelo código do Id = (1, 2, 3 ... )
-    public Produtos listaProduto(@PathVariable(value = "id") long id){
-        return produtoRepository.findById(id);// Retorna a pesquisa feita pelo Id.
+    public NotaItem listaProduto(@PathVariable(value = "id") long id){
+        return notaItemRepository.findById(id);// Retorna a pesquisa feita pelo Id.
         //http://localhost:8080/cadastro/produto/1  link da pagina Web.
     }
 
