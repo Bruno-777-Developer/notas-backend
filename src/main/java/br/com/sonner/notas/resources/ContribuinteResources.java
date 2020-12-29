@@ -26,7 +26,6 @@ public class ContribuinteResources {
         //http://localhost:8080/cadastro/contribuinte/1  link da pagina Web.
     }
     
-
     @PostMapping("/contribuinte") // Recebe um produto para salvar - O Produto vem no corpo da requisição. @RequestBody
     public Contribuinte salvaContribuinteUnico(@RequestBody Contribuinte contribuinte) {
         return contribuinteRepository.save(contribuinte);// Retorna uma nota cadastrada que foi salva
