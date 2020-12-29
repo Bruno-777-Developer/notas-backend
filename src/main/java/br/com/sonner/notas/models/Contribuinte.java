@@ -13,9 +13,13 @@ import java.io.Serializable;
         @GeneratedValue(strategy= GenerationType.IDENTITY)
         private long id;
 
-        private String contribuinte;
+        private long codigo;
 
-        private long numero;
+        private String nome;
+
+
+
+
 
         public long getId() {
             return id;
@@ -25,19 +29,19 @@ import java.io.Serializable;
             this.id = id;
         }
 
-        public String getContribuinte() {
-            return contribuinte;
+        public long getCodigo() {
+            return codigo;
         }
 
-        public void setContribuinte(String contribuinte) {
-            this.contribuinte = contribuinte;
+        public void setCodigo(long codigo) {
+            this.codigo = codigo;
         }
 
-        public long getNumero() {
-            return numero;
+        public String getNome() {
+            return nome;
         }
 
-        public void setNumero(long numero) {
-            this.numero = numero;
+        public void setNome(String nome) {
+            this.nome = nome;
         }
     }
