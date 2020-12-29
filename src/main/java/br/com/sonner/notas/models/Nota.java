@@ -1,14 +1,14 @@
 package br.com.sonner.notas.models;
 
-
+import org.springframework.format.annotation.DateTimeFormat;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
 
 @Entity
-@Table(name = "TB_CadastroNF")
-public class CadastroNotas implements Serializable {
-	
+@Table(name = "nota_fiscal")
+public class Nota implements Serializable {
+
 private static final long serialVersionUID = 1L;
 
 @Id
@@ -19,6 +19,11 @@ private String contribuinte;
 
 private long numero;
 
+private String descricao;
+
+private String itens;
+
+@DateTimeFormat(pattern="dd/MM/yyyy")
 private Date data;
 
 public long getId() {
