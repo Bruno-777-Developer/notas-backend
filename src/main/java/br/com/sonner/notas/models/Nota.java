@@ -18,9 +18,11 @@ public class Nota implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    private long numero;
+    @ManyToOne
+    @JoinColumn(name = "contribuinte")
+    private Contribuinte contribuinte;
 
-    private long contribuinte;
+    private long numero;
 
     private String descricao;
 
@@ -33,12 +35,21 @@ public class Nota implements Serializable {
 
 
 
+
     public long getId() {
         return id;
     }
 
     public void setId(long id) {
         this.id = id;
+    }
+
+    public Contribuinte getContribuinte() {
+        return this.contribuinte;
+    }
+
+    public void setContribuinte(Contribuinte contribuinte) {
+        this.contribuinte = contribuinte;
     }
 
     public long getNumero() {
@@ -49,6 +60,14 @@ public class Nota implements Serializable {
         this.numero = numero;
     }
 
+    public String getDescricao() {
+        return descricao;
+    }
+
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
+    }
+
     public Date getData() {
         return data;
     }
@@ -57,27 +76,11 @@ public class Nota implements Serializable {
         this.data = data;
     }
 
-	public long getContribuinte() {
-		return contribuinte;
-	}
+    public List<NotaItem> getItens() {
+        return itens;
+    }
 
-	public void setContribuinte(long contribuinte) {
-		this.contribuinte = contribuinte;
-	}
-
-	public String getDescricao() {
-		return descricao;
-	}
-
-	public void setDescricao(String descricao) {
-		this.descricao = descricao;
-	}
-
-	public List<NotaItem> getItens() {
-		return itens;
-	}
-
-	public void setItens(List<NotaItem> itens) {
-		this.itens = itens;
-	}
+    public void setItens(List<NotaItem> itens) {
+        this.itens = itens;
+    }
 }

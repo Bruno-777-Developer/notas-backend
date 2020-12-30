@@ -1,6 +1,5 @@
 package br.com.sonner.notas.repository;
 
-import br.com.sonner.notas.models.Nota;
 import br.com.sonner.notas.models.NotaItem;
 import org.springframework.data.jpa.repository.JpaRepository;
 

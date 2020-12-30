@@ -17,10 +17,6 @@ import java.io.Serializable;
 
         private String nome;
 
-
-
-
-
         public long getId() {
             return id;
         }

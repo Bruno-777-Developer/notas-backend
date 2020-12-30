@@ -21,15 +21,25 @@ public class NotaResources {
     }
 
     @GetMapping("/{id}") // Lista um único produto pelo código do Id = (1, 2, 3 ... )
-        public Nota listaCadastroNotaUnica(@PathVariable(value = "id") long id){
+        public Nota listaNota(@PathVariable(value = "id") long id){
             return notaRepository.findById(id);// Retorna a pesquisa feita pelo Id.
-          //http://localhost:8080/cadastro/nota/1  link da pagina Web.
+
             }
 
    @PostMapping("/") // Recebe um produto para salvar - O Produto vem no corpo da requisição. @RequestBody
-           public Nota salvaCadastroNotaUnica(@RequestBody Nota cadastronota){
+           public Nota salvaNota(@RequestBody Nota cadastronota){
                return notaRepository.save(cadastronota);// Retorna uma nota cadastrada que foi salva
-                //http://localhost:8080/cadastro/nota
+
+    }
+    @PutMapping("/")
+    public Nota atualizaNota(@RequestBody Nota nota) {
+        return notaRepository.save(nota);
+    }
+
+    @DeleteMapping("/")
+    public void deletaNota(@RequestBody Nota nota) {
+        notaRepository.delete(nota);
     }
 
 }
+

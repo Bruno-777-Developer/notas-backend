@@ -7,9 +7,7 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping(value = "/notaitem") // URI Padrão para a API
 public class NotaItemResources {
 
-
     final NotaItemRepository notaItemRepository;
-
     public NotaItemResources(NotaItemRepository notaItemRepository) {
         this.notaItemRepository = notaItemRepository;
     }
