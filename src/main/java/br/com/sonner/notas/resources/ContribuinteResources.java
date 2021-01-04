@@ -17,31 +17,31 @@ public class ContribuinteResources {
     @GetMapping("/") // Método que lista todos os contribuintes salvos no Banco de Dados
     public Object listaContribuintes() {
         return contribuinteRepository.findAll();// Retorno
-        //http://localhost:8080/cadastro/contribuintes  link da pagina Web.
+        //http://localhost:8080/contribuinte/  link da pagina Web.
     }
 
     @GetMapping("/{id}") // Lista um único contribuinte pelo código do Id = (1, 2, 3 ... )
     public Contribuinte listaContribuinteUnico(@PathVariable(value = "id") long id) {
         return contribuinteRepository.findById(id);// Retorna a pesquisa feita pelo Id.
-        //http://localhost:8080/cadastro/contribuinte/1  link da pagina Web.
+        //http://localhost:8080/contribuinte/1  link da pagina Web.
     }
 
     @PostMapping("/") // Recebe um produto para salvar - O Produto vem no corpo da requisição. @RequestBody
     public Contribuinte salvaContribuinte(@RequestBody Contribuinte contribuinte) {
         return contribuinteRepository.save(contribuinte);// Retorna uma nota cadastrada que foi salva
-        //http://localhost:8080/cadastro/contribuinte
+        //http://localhost:8080/contribuinte/
     }
 
     @PutMapping("/")
     public Contribuinte atualizaContribuinte(@RequestBody Contribuinte contribuinte) {
         return contribuinteRepository.save(contribuinte);// Retorna uma nota cadastrada que foi salva
-        //http://localhost:8080/cadastro/contribuinte
+        //http://localhost:8080/contribuinte/
     }
 
     @DeleteMapping("/")
     public void deletaContribuinte(@RequestBody Contribuinte contribuinte) {
       contribuinteRepository.delete(contribuinte);
-        //http://localhost:8080/cadastro/contribuinte
+        //http://localhost:8080/contribuinte/
     }
 
 }

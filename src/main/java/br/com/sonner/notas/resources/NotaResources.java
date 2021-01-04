@@ -15,22 +15,24 @@ public class NotaResources {
     }
 
     @GetMapping("/") // Método que lista todos os produtos salvos no Banco de Dados
-        public Object listaNotas(){
-            return notaRepository.findAll();// Retorno
+    public Object listaNotas() {
+        return notaRepository.findAll();// Retorno
         //http://localhost:8080/cadastro/notas  link da pagina Web.
     }
 
     @GetMapping("/{id}") // Lista um único produto pelo código do Id = (1, 2, 3 ... )
-        public Nota listaNota(@PathVariable(value = "id") long id){
-            return notaRepository.findById(id);// Retorna a pesquisa feita pelo Id.
-
-            }
-
-   @PostMapping("/") // Recebe um produto para salvar - O Produto vem no corpo da requisição. @RequestBody
-           public Nota salvaNota(@RequestBody Nota cadastronota){
-               return notaRepository.save(cadastronota);// Retorna uma nota cadastrada que foi salva
+    public Nota listaNota(@PathVariable(value = "id") long id) {
+        Nota nota = notaRepository.findById(id); // pesquisa feita pelo Id.
+        return nota;// Retorna a nota
 
     }
+
+    @PostMapping("/") // Recebe um produto para salvar - O Produto vem no corpo da requisição. @RequestBody
+    public Nota salvaNota(@RequestBody Nota cadastronota) {
+        return notaRepository.save(cadastronota);// Retorna uma nota cadastrada que foi salva
+
+    }
+
     @PutMapping("/")
     public Nota atualizaNota(@RequestBody Nota nota) {
         return notaRepository.save(nota);
