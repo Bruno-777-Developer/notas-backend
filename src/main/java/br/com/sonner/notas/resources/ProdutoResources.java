@@ -2,12 +2,7 @@ package br.com.sonner.notas.resources;
 
 import br.com.sonner.notas.models.Produto;
 import br.com.sonner.notas.repository.ProdutoRepository;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
-
-import java.util.List;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping(value = "/produto")
@@ -15,12 +10,11 @@ import java.util.List;
 public class ProdutoResources {
 
     final
-
     ProdutoRepository  produtoRepository;
 
     public ProdutoResources(ProdutoRepository produtoRepository){ this.produtoRepository = produtoRepository;}
     @GetMapping("/")
-    public List<> listaProdutos(){
+    public Object listaProdutos(){
         return produtoRepository.findAll();
     }
     @GetMapping("/{id}")
@@ -29,6 +23,16 @@ public class ProdutoResources {
         return produto;
     }
 
-
-
+    @PostMapping("/")
+    public Produto salvaProduto(@RequestBody Produto cadastroProduto){
+        return produtoRepository.save(cadastroProduto);
+    }
+    @PutMapping("/")
+    public Produto atualizaProduto(@RequestBody Produto produto) {
+        return produtoRepository.save(produto);
+    }
+    @DeleteMapping("/")
+    public void deletaProduto(@RequestBody Produto produto){
+        produtoRepository.delete(produto);
+    }
 }

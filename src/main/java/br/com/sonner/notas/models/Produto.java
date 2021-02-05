@@ -6,7 +6,7 @@ import java.math.BigDecimal;
 import java.util.Date;
 
 @Entity
-@Table(name = 'produto' )
+@Table(name = "produto")
 
 public class Produto implements Serializable {
 
@@ -18,7 +18,7 @@ public class Produto implements Serializable {
 
     private String nome;
 
-    private BigDecimal preço;
+    private BigDecimal preco;
 
     private String quantidade;
 
@@ -26,7 +26,7 @@ public class Produto implements Serializable {
 
     private Date validade;
 
-    private Date fabricação;
+    private Date fabricacao;
 
     private String tipo;
 
@@ -46,12 +46,12 @@ public class Produto implements Serializable {
         this.nome = nome;
     }
 
-    public BigDecimal getPreço() {
-        return preço;
+    public BigDecimal getPreco() {
+        return preco;
     }
 
-    public void setPreço(BigDecimal preço) {
-        this.preço = preço;
+    public void setPreco(BigDecimal preco) {
+        this.preco = preco;
     }
 
     public String getQuantidade() {
@@ -78,12 +78,12 @@ public class Produto implements Serializable {
         this.validade = validade;
     }
 
-    public Date getFabricação() {
-        return fabricação;
+    public Date getFabricacao() {
+        return fabricacao;
     }
 
-    public void setFabricação(Date fabricação) {
-        this.fabricação = fabricação;
+    public void setFabricacao(Date fabricacao) {
+        this.fabricacao = fabricacao;
     }
 
     public String getTipo() {
