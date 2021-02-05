@@ -23,10 +23,10 @@ public class NotaItemResources {
         return notaItemRepository.findById(id);
     }
 
-    @GetMapping("/{id}") // Lista um único produto pelo código do Id = (1, 2, 3 ... )
+    /*@GetMapping("/{id}") // Lista um único produto pelo código do Id = (1, 2, 3 ... )
     public NotaItem listaNotaItem(@PathVariable(value = "id") long id){
         return notaItemRepository.findById(id);
-    }
+    }*/
 
 //    @GetMapping("/itensNota/{id}") // Lista um único produto pelo código do Id = (1, 2, 3 ... )
 //    public NotaItem listaNotaItem(@PathVariable(value = "id") long id){

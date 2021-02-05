@@ -4,6 +4,8 @@ import br.com.sonner.notas.models.Contribuinte;
 import br.com.sonner.notas.repository.ContribuinteRepository;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController // Classe API REST e vai receber a requisições http.
 @RequestMapping(value = "/contribuinte") // URI Padrão para a API
 public class ContribuinteResources {
@@ -15,7 +17,7 @@ public class ContribuinteResources {
     }
 
     @GetMapping("/") // Método que lista todos os contribuintes salvos no Banco de Dados
-    public Object listaContribuintes() {
+    public List<Contribuinte> listaContribuintes() {
         return contribuinteRepository.findAll();// Retorno
         //http://localhost:8080/contribuinte/  link da pagina Web.
     }
