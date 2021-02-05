@@ -12,11 +12,11 @@ public class NotaItemResources {
         this.notaItemRepository = notaItemRepository;
     }
 
-//    @GetMapping("/") // Método que lista todos os produtos salvos no Banco de Dados
-//    public Object listaNotaItens() {
-//        return notaItemRepository.findAll();// Retorna a lista de itens da nota
-//        //http://localhost:8080/cadastro/notas  link da pagina Web.
-//    }
+    @GetMapping("/") // Método que lista todos os produtos salvos no Banco de Dados
+    public Object listaNotaItens() {
+        return notaItemRepository.findAll();// Retorna a lista de itens da nota
+        //http://localhost:8080/cadastro/notas  link da pagina Web.
+    }
 
     @GetMapping("/{id}") // Lista um único produto pelo código do Id = (1, 2, 3 ... )
     public NotaItem listaNotaItens(@PathVariable(value = "id") long id){
