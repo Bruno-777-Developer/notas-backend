@@ -2,6 +2,7 @@ package br.com.sonner.notas.resources;
 import br.com.sonner.notas.models.NotaItem;
 import br.com.sonner.notas.repository.NotaItemRepository;
 import org.springframework.web.bind.annotation.*;
+import java.util.List;
 
 @RestController // Classe API REST e vai receber a requisições http.
 @RequestMapping(value = "/notaitem") // URI Padrão para a API
@@ -13,7 +14,7 @@ public class NotaItemResources {
     }
 
     @GetMapping("/") // Método que lista todos os produtos salvos no Banco de Dados
-    public Object listaNotaItens() {
+    public List<NotaItem> listaNotaItens() {
         return notaItemRepository.findAll();// Retorna a lista de itens da nota
         //http://localhost:8080/cadastro/notas  link da pagina Web.
     }

@@ -14,7 +14,9 @@ public class Produto implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private String id;
+    private long id;
+
+    private long codigo;
 
     private String nome;
 
@@ -30,14 +32,21 @@ public class Produto implements Serializable {
 
     private String tipo;
 
-    public String getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(long id) {
         this.id = id;
     }
 
+    public long getCodigo() {
+        return codigo;
+    }
+
+    public void setCodigo(long codigo) {
+        this.codigo = codigo;
+    }
     public String getNome() {
         return nome;
     }
