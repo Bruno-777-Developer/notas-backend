@@ -16,11 +16,11 @@ public class Produto implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    private long codigo;
-
     private String nome;
 
     private BigDecimal preco;
+
+    private long codigo;
 
     private String quantidade;
 
